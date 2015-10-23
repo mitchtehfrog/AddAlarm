@@ -7,7 +7,12 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import java.util.Calendar;
+
 public class AddAlarmActivity extends Activity {
+
+
+    private Calendar calendar;
 
     private AddAlarmView addAlarmView;
     private Integer[] hours = new Integer[]{1,2,3,4,5,6,7,8,9,10,11,12};
@@ -25,6 +30,7 @@ public class AddAlarmActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_alarm);
+        addAlarmView = (AddAlarmView) findViewById(R.id.addalarmview);
         Spinner hourSpinner = (Spinner) findViewById(R.id.hourspinner);
         Spinner minuteSpinner = (Spinner) findViewById(R.id.minutespinner);
         hourSpinner.setAdapter(hourAdapter);
